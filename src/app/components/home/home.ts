@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.css',
 })
 export class Home {
-  images: string[] = [
+  brands: string[] = [
     'assets/brands/Adidas.jpg',
     'assets/brands/A.webp',
     'assets/brands/Puma.jpg',
@@ -18,17 +18,47 @@ export class Home {
     'assets/brands/Hm.jpg',
     'assets/brands/Nike.jpg',
   ];
+  images = [
+    { src: 'testassets/Red.jpg', detail: '1 Summer is On' },
+    { src: 'testassets/Blue.webp', detail: '2 Cool Blue' },
+    { src: 'testassets/Red.jpg', detail: '3 Summer is On' },
+    { src: 'testassets/Blue.webp', detail: '4 Cool Blue' },
+    { src: 'testassets/Red.jpg', detail: '5 Summer is On' },
+    { src: 'testassets/Blue.webp', detail: '6 Cool Blue' },
+    { src: 'testassets/Red.jpg', detail: '7 Summer is On' },
+    { src: 'testassets/Blue.webp', detail: '8 Cool Blue' },
+  ];
 
   currentIndex: number = 0;
-  direction: 'next' | 'prev' = 'next'; // to know slide direction
+  currentValue: number = 0;
 
-  prev() {
-    this.direction = 'prev';
-    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
+  constructor(private cdr: ChangeDetectorRef) {
+    setInterval(() => {
+      if (this.currentValue === this.images.length) {
+        this.currentValue = 0;
+        this.currentIndex = this.currentValue;
+      } else {
+        this.currentIndex = this.currentValue;
+      }
+      this.currentValue++;
+      //console.log('Value:', this.currentIndex);
+      this.cdr.detectChanges();
+    }, 2000);
   }
 
-  next() {
-    this.direction = 'next';
-    this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
+  Next() {
+    if (this.currentIndex === this.images.length - 1) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex = this.currentIndex + 1;
+    }
+  }
+
+  Prev() {
+    if (this.currentIndex === 0) {
+      this.currentIndex = this.images.length - 1;
+    } else {
+      this.currentIndex = this.currentIndex - 1;
+    }
   }
 }

@@ -18,6 +18,21 @@ export class Test {
     './assets/pictures/Fashion.jpg',
   ];
 
+
+  getTransform(index: number) {
+    if (index === this.currentIndex) return 'translateX(0%)';
+    // if (this.direction === 'next')
+    //   return index < this.currentIndex ? 'translateX(-100%)' : 'translateX(100%)';
+    // if (this.direction === 'prev')
+    //   return index > this.currentIndex ? 'translateX(100%)' : 'translateX(-100%)';
+    else return 'translateX(100%)';
+  }
+
+   images1 = [
+    { src: 'testassets/Red.jpg', detail: 'Summer is On' },
+    { src: 'testassets/Blue.webp', detail: 'Cool Blue' },
+  ];
+
   currentIndex: number = 0;
   direction: 'next' | 'prev' = 'next'; // to know slide direction
 
@@ -29,14 +44,5 @@ export class Test {
   next() {
     this.direction = 'next';
     this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
-  }
-
-  getTransform(index: number) {
-    if (index === this.currentIndex) return 'translateX(0%)';
-    // if (this.direction === 'next')
-    //   return index < this.currentIndex ? 'translateX(-100%)' : 'translateX(100%)';
-    // if (this.direction === 'prev')
-    //   return index > this.currentIndex ? 'translateX(100%)' : 'translateX(-100%)';
-    else return 'translateX(100%)';
   }
 }
