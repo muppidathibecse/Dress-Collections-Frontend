@@ -1,0 +1,28 @@
+<div class="relative h-[400px] w-[700px] mx-auto overflow-hidden">
+  <ul class="h-full w-full relative">
+    <li *ngFor="let img of images; let i = index" class="absolute inset-0">
+      <img
+        [src]="img"
+        class="h-full w-full transition-transform duration-500"
+        [style.transform]="getTransform(i)"
+      />
+    </li>
+  </ul>
+
+  <div class="absolute flex h-full w-full top-0 left-0">
+    <div class="my-auto w-full flex justify-between px-5">
+      <button
+        class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700"
+        (click)="prev()"
+      >
+        ‹
+      </button>
+      <button
+        class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700"
+        (click)="next()"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</div>

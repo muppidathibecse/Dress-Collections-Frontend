@@ -1,0 +1,14 @@
+.hr-underline {
+  border: black solid 2px;
+  transform: scaleX(0);
+  transform-origin: left; /* start from the left side */
+  transition: transform 0.4s ease-in-out;
+  color: black;
+}
+.active-link p{
+    color: black;
+}
+
+.active-link .hr-underline {
+  transform: scaleX(1); /* expand from left to right */
+}
