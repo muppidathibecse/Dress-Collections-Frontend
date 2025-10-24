@@ -81,7 +81,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col mt-10 mb-3">
+  <div class="flex flex-col mt-10 mb-10">
     <div class="flex flex-col justify-center items-center">
       <h1 class="text-[40px] font-bold">Explore's New</h1>
       <hr class="border-t-5 border-black rounded-full w-[150px] mt-1" />
@@ -96,7 +96,7 @@
           <li *ngFor="let img of images; let i = index" class="absolute inset-0">
             <img
               [src]="img.src"
-              class="h-full w-full object-cover transition-opacity duration-500"
+              class="h-full w-full object-cover transition-opacity duration-500 rounded-2xl"
               [class.hidden]="currentIndex !== i"
             />
           </li>
@@ -104,24 +104,23 @@
       </div>
 
       <!-- Right side details -->
-      <div class="w-1/2 flex flex-row justify-start items-center p-5 gap-4">
-        <img src="assets/brands/Puma.jpg" class="h-[100px] w-[100px]" alt="" />
-        <p class="text-2xl font-semibold text-gray-800">
-          {{ images[currentIndex].detail }}
-        </p>
+      <div class="w-1/2 flex justify-center items-center flex-col p-5 gap-4">
+        <p class="text-[35px] uppercase font-bold text-gray-800">Birthday is On</p>
+        <p class="text-[25px]">Upto 80% Off</p>
+        <img [src]="images[currentIndex].brandsrc" class="h-[200px] w-[200px]" alt="" />
       </div>
 
       <!-- Prev/Next buttons -->
       <div class="absolute flex h-full w-full top-0 left-0">
         <div class="my-auto w-full flex justify-between px-5">
           <button
-            class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700"
+            class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700 opacity-50 cursor-pointer"
             (click)="Prev()"
           >
             ‹
           </button>
           <button
-            class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700"
+            class="bg-black text-white h-[30px] w-[30px] rounded-full hover:bg-gray-700 opacity-50 cursor-pointer"
             (click)="Next()"
           >
             ›
@@ -131,7 +130,7 @@
     </div>
     <!-- Image indicator dots -->
   </div>
-  <div class="flex justify-center items-center gap-3 mt-2 mb-5">
+  <div class="flex justify-center items-center gap-3 mt-3 mb-5">
     <div
       *ngFor="let img of images; let i = index"
       class="h-2 w-[60px] rounded-full border border-[#505050] cursor-pointer transition-all duration-300"
