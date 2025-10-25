@@ -1,4 +1,29 @@
 <main>
   <app-navbar></app-navbar>
-  <h1>Womens Works</h1>
+  <div class="h-full w-full flex flex-wrap justify-center items-center gap-20 my-10">
+    <div
+      *ngFor="let men of MenDetails; let i = index"
+      class="flex flex-col border-2 border-[#d3d3d3] p-2 rounded-[10px] w-54 cursor-pointer hover:border-black hover:border-2"
+    >
+      <img src={{men.src}} class="h-59 w-full rounded-[10px]" />
+      <div class="h-34 flex flex-col gap-1 justify-between">
+        <h1 class="text-[20px] font-semibold mt-2">{{ men.brand }}</h1>
+        <p class="text-gray-500">{{ men.name }}</p>
+        <div class="flex gap-3">
+          <p class="font-semibold">₹{{ men.rs }}</p>
+          <p class="line-through text-gray-400">₹{{ men.oldrs }}</p>
+          <p class="text-[#00976c] font-semibold">{{ men.off }}% OFF</p>
+        </div>
+        <div class="flex gap-1">
+          <app-star *ngFor="let star of [].constructor(men.rev)"></app-star>
+
+          <img
+            *ngFor="let star of [].constructor(5 - men.rev); let i = index"
+            src="assets/icons/star.svg"
+            class="w-5 h-5 rounded-full"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
