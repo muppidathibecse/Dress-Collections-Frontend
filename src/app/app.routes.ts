@@ -5,6 +5,8 @@ import { Start } from './components/start/start';
 import { Men } from './components/men/men';
 import { Women } from './components/women/women';
 import { Kids } from './components/kids/kids';
+import { Likes } from './components/likes/likes';
+import { Bags } from './components/bags/bags';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -31,5 +33,13 @@ export const routes: Routes = [
   {
     path: 'kids',
     component: Kids,
+  },
+  {
+    path: 'likes',
+    component: Likes,
+  },
+  {
+    path: 'bags',
+    component: Bags,
   },
 ];

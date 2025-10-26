@@ -1,0 +1,28 @@
+<main>
+  <app-navbar></app-navbar>
+  <div class="h-full w-full flex flex-wrap justify-center items-center gap-20 my-10">
+    <div
+      *ngFor="let men of MenDetails; let i = index"
+      class="relative flex flex-col border-2 border-[#efefef] p-2 rounded-[10px] w-54 h-118 cursor-pointer hover:border-black hover:border-2"
+    >
+      <img [src]="men.src" class="h-59 w-full rounded-[10px]" />
+      <div class="flex flex-col gap-3 justify-between">
+        <h1 class="text-[20px] font-semibold mt-2">{{ men.brand }}</h1>
+        <p class="text-gray-500">{{ men.name }}</p>
+        <div class="flex gap-3">
+          <p class="font-semibold">₹{{ men.rs }}</p>
+          <p class="line-through text-gray-400">₹{{ men.oldrs }}</p>
+          <p class="text-[#00976c] font-semibold">{{ men.off }}% OFF</p>
+        </div>
+         <div class="h-10 rounded-[10px] flex justify-between items-center px-2 border border-gray-400 cursor-pointer bg-black">
+          <button class="text-white">Add to bag</button>
+          <app-bag></app-bag>
+        </div>
+        <div class="h-10 rounded-[10px] flex justify-between items-center px-2 border border-gray-400 cursor-pointer hover:bg-black hover:text-white">
+          <button class="text-gray-400 hover:text-white">Remove</button>
+          <app-remove [customClass]="{'text-gray-300': true, 'hover:text-white': true}"></app-remove>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
