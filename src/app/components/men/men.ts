@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { CommonModule } from '@angular/common';
 import { StarComponent } from '../icons/star/star';
+import { Heart } from '../icons/heart/heart';
+import { HeartRed } from '../icons/heart-red/heart-red';
 
 @Component({
   selector: 'app-men',
-  imports: [Navbar, StarComponent, CommonModule],
+  standalone: true,
+  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed],
   templateUrl: './men.html',
   styleUrl: './men.css',
 })
@@ -19,6 +22,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 1,
+      like: false,
     },
     {
       src: 'assets/mens/M2.webp',
@@ -28,6 +32,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 2,
+      like: false,
     },
     {
       src: 'assets/mens/M3.webp',
@@ -37,6 +42,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 3,
+      like: false,
     },
     {
       src: 'assets/mens/M4.avif',
@@ -46,6 +52,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 4,
+      like: false,
     },
     {
       src: 'assets/mens/M5.webp',
@@ -55,6 +62,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 5,
+      like: false,
     },
     {
       src: 'assets/mens/M6.webp',
@@ -64,6 +72,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 1,
+      like: false,
     },
     {
       src: 'assets/mens/M7.jpg',
@@ -73,6 +82,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 2,
+      like: false,
     },
     {
       src: 'assets/mens/M8.webp',
@@ -82,6 +92,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 3,
+      like: false,
     },
     {
       src: 'assets/mens/M9.jpg',
@@ -91,6 +102,7 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 4,
+      like: false,
     },
     {
       src: 'assets/mens/M10.webp',
@@ -100,6 +112,11 @@ export class Men {
       oldrs: 2000,
       off: 45,
       rev: 5,
+      like: false,
     },
   ];
+  ChangeLike(men: any) {
+    men.like = !men.like;
+    console.log(men.like);
+  }
 }

@@ -1,12 +1,12 @@
 .hr-underline {
-  border: black solid 2px;
+  border: #1f2937 solid 2px;
   transform: scaleX(0);
   transform-origin: left; /* start from the left side */
   transition: transform 0.4s ease-in-out;
-  color: black;
+  color: #1f2937;
 }
-.active-link p{
-    color: black;
+.active-link p {
+  color: #1f2937;
 }
 
 .active-link .hr-underline {
