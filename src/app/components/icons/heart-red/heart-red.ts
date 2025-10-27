@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      class="w-4 h-5 text-red-500"
+      class="w-5 h-6 text-red-500"
     >
       <path
         d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 

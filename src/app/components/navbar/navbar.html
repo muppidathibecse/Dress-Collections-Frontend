@@ -56,18 +56,32 @@
     </div>
 
     <div class="h-full w-50 flex justify-between items-center px-2">
-      <img
-        src="assets/icons/heart.svg"
+      <a
         routerLink="/likes"
+        class="cursor-pointer"
+        #likesRla="routerLinkActive"
         routerLinkActive="active-link"
-        class="w-9 h-9 rounded-full"
-      />
-      <img
-        src="assets/icons/bag.svg"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <app-heart-black *ngIf="likesRla.isActive; else heartOutline"></app-heart-black>
+        <ng-template #heartOutline>
+          <app-heart-outline></app-heart-outline>
+        </ng-template>
+      </a>
+
+      <a
         routerLink="/bags"
+        class="cursor-pointer"
+        #bagsRla="routerLinkActive"
         routerLinkActive="active-link"
-        class="w-9 h-9 rounded-full"
-      />
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <app-bag-black *ngIf="bagsRla.isActive; else bagOutline"></app-bag-black>
+        <ng-template #bagOutline>
+          <app-bag-outline></app-bag-outline>
+        </ng-template>
+      </a>
+
       <img src="assets/icons/profile.svg" class="w-9 h-9 rounded-full" />
     </div>
   </div>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-heart',
+  selector: 'app-heart-outline',
+  imports: [],
   template: `
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-5 h-6 text-gray-800"
+      class="size-9"
     >
       <path
         stroke-linecap="round"
@@ -18,6 +19,6 @@ import { Component } from '@angular/core';
       />
     </svg>
   `,
-  styles: [],
+  styles: ``,
 })
-export class Heart {}
+export class HeartOutline {}
