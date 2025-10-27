@@ -21,13 +21,19 @@
             class="flex justify-between border border-[#b4b4b4] bg-[#def9ff] w-[100px] px-2 py-1 rounded-[10px]"
           >
             <button>Size: {{ bag.size }}</button>
-            <app-down-arrow class="cursor-pointer" (click)="openPopup()"></app-down-arrow>
+            <app-down-arrow
+              class="cursor-pointer"
+              (click)="openPopup(bag.qty, bag.size)"
+            ></app-down-arrow>
           </div>
           <div
             class="flex justify-between border border-[#b4b4b4] bg-[#def9ff] w-[100px] px-2 py-1 rounded-[10px]"
           >
             <button>Qty: {{ bag.qty }}</button>
-            <app-down-arrow class="cursor-pointer" (click)="openPopup()"></app-down-arrow>
+            <app-down-arrow
+              class="cursor-pointer"
+              (click)="openPopup(bag.qty, bag.size)"
+            ></app-down-arrow>
           </div>
         </div>
         <div class="flex gap-3">
@@ -128,24 +134,11 @@
         <p class="text-[20px] font-semibold">Select Size</p>
         <div class="flex gap-4 justify-start">
           <p
+            *ngFor="let s of sizes"
+            [ngClass]="s === size ? 'bg-black text-white' : 'bg-white text-black'"
             class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
           >
-            S
-          </p>
-          <p
-            class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
-          >
-            M
-          </p>
-          <p
-            class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
-          >
-            L
-          </p>
-          <p
-            class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
-          >
-            XL
+            {{ s }}
           </p>
         </div>
       </div>
@@ -155,17 +148,19 @@
         <p class="text-[20px] font-semibold">Select Quantity</p>
         <div class="flex gap-4 justify-start">
           <p
-            class="w-[50px] h-[50px] text-center text-[24px] flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
+            (click)="Decre()"
+            class="w-[50px] h-[50px] text-center text-[24px] flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b] cursor-pointer active:bg-gray-400"
           >
             -
           </p>
           <p
-            class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
+            class="w-[50px] h-[50px] text-center flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b] bg-black text-white"
           >
-            5
+            {{ qty }}
           </p>
           <p
-            class="w-[50px] h-[50px] text-center text-[24px] flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b]"
+            (click)="Incre()"
+            class="w-[50px] h-[50px] text-center text-[24px] flex items-center justify-center rounded-[9px] shadow-md shadow-[#5b5b5b] cursor-pointer active:bg-gray-400"
           >
             +
           </p>

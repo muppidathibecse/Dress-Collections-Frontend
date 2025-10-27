@@ -5,6 +5,10 @@ import { BagOutline } from '../icons/bag-outline/bag-outline';
 import { CommonModule } from '@angular/common';
 import { HeartBlack } from '../icons/heart-black/heart-black';
 import { HeartOutline } from '../icons/heart-outline/heart-outline';
+import { HomeOutline } from '../icons/home-outline/home-outline';
+import { HomeBlack } from '../icons/home-black/home-black';
+import { ProfileBlack } from '../icons/profile-black/profile-black';
+import { ProfileOutline } from '../icons/profile-outline/profile-outline';
 
 @Component({
   selector: 'app-navbar',
@@ -16,10 +20,12 @@ import { HeartOutline } from '../icons/heart-outline/heart-outline';
     CommonModule,
     HeartBlack,
     HeartOutline,
+    HomeOutline,
+    HomeBlack,
+    ProfileBlack,
+    ProfileOutline,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
- 
-}
+export class Navbar {}

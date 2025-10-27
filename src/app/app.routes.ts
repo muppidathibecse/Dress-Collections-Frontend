@@ -7,6 +7,7 @@ import { Women } from './components/women/women';
 import { Kids } from './components/kids/kids';
 import { Likes } from './components/likes/likes';
 import { Bags } from './components/bags/bags';
+import { Profile } from './components/profile/profile';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -41,5 +42,9 @@ export const routes: Routes = [
   {
     path: 'bags',
     component: Bags,
+  },
+  {
+    path: 'profile',
+    component: Profile,
   },
 ];

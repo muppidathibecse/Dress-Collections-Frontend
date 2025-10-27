@@ -6,6 +6,7 @@ import { HeartRed } from '../icons/heart-red/heart-red';
 import { Truck } from '../icons/truck/truck';
 import { Remove } from '../icons/remove/remove';
 import { CommonModule } from '@angular/common';
+import { StringifyOptions } from 'querystring';
 
 @Component({
   selector: 'app-bags',
@@ -36,44 +37,8 @@ export class Bags {
       oldrs: 2000,
       off: 45,
       like: false,
-      size: 'M',
-      qty: 4,
-      delivery: '10 Nov',
-    },
-    {
-      src: 'assets/kids/K1.jpg',
-      brand: 'NETPLAY',
-      name: 'Men Regular Fit Shirt',
-      rs: 1700,
-      oldrs: 2000,
-      off: 45,
-      like: false,
-      size: 'M',
-      qty: 4,
-      delivery: '10 Nov',
-    },
-    {
-      src: 'assets/kids/K1.jpg',
-      brand: 'NETPLAY',
-      name: 'Men Regular Fit Shirt',
-      rs: 1700,
-      oldrs: 2000,
-      off: 45,
-      like: false,
-      size: 'M',
-      qty: 4,
-      delivery: '10 Nov',
-    },
-    {
-      src: 'assets/kids/K1.jpg',
-      brand: 'NETPLAY',
-      name: 'Men Regular Fit Shirt',
-      rs: 1700,
-      oldrs: 2000,
-      off: 45,
-      like: false,
-      size: 'M',
-      qty: 4,
+      size: 'XL',
+      qty: 1,
       delivery: '10 Nov',
     },
   ];
@@ -93,16 +58,26 @@ export class Bags {
   }
 
   showPopup = false;
-
-  openPopup() {
+  qty: number = 0;
+  size: string = '';
+  sizes: string[] = ['S', 'M', 'L', 'XL'];
+  openPopup(a: number, b: string) {
     this.showPopup = true;
+    this.qty = a;
+    this.size = b;
+    console.log('Qty: ', this.qty, 'Size: ', this.size);
   }
 
   closePopup(event: Event) {
-    // Close if clicked on background or Apply button
     const target = event.target as HTMLElement;
     if (target.classList.contains('bg-opacity-40') || target.tagName === 'BUTTON') {
       this.showPopup = false;
     }
+  }
+  Incre() {
+    this.qty++;
+  }
+  Decre() {
+    this.qty--;
   }
 }
