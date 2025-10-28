@@ -1,0 +1,32 @@
+<main class="w-screen flex flex-col justify-center items-center">
+  <h1 class="text-[35px] pt-4 font-semibold mb-7">GET API</h1>
+  <p class="text-[18px] text-gray-600">Mens All Items</p>
+  <table class="mt-5">
+    <thead>
+      <tr>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">S. No</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Brand Name</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Details</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Old Rs</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">New Rs</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Offer</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Reviews</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Image Source</th>
+        <th class="text-center bg-gray-800 text-white py-3 px-8 border border-white">Is Like</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of AllData; let i = index">
+        <td class="py-3 pl-2 border border-gray-800 bg-[#2d2e305e]">{{ i + 1 }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#ffff]">{{ data.brand_name }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#2d2e305e]">{{ data.details }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#ffff]">{{ data.old_rs }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#2d2e305e]">{{ data.new_rs }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#ffff]">{{ data.offer }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#2d2e305e]">{{ data.stars }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#ffff]">{{ data.img_src }}</td>
+        <td class="py-3 pl-2 border border-gray-800 bg-[#2d2e305e]">{{ data.isLike ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

@@ -9,8 +9,8 @@ import { Likes } from './components/likes/likes';
 import { Bags } from './components/bags/bags';
 import { Profile } from './components/profile/profile';
 import { Adminapi } from './components/admincomponents/adminapi/adminapi';
-import { Put } from './components/admincomponents/put/put';
 import { Post } from './components/admincomponents/post/post';
+import { Get } from './components/admincomponents/get/get';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -54,9 +54,9 @@ export const routes: Routes = [
     path: 'adminapi',
     component: Adminapi,
   },
-  {
-    path: 'adminapi/put',
-    component: Put,
+   {
+    path: 'adminapi/get',
+    component: Get,
   },
   {
     path: 'adminapi/post',

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Put } from './put';
+import { Get } from './get';
 
-describe('Put', () => {
-  let component: Put;
-  let fixture: ComponentFixture<Put>;
+describe('Get', () => {
+  let component: Get;
+  let fixture: ComponentFixture<Get>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Put]
+      imports: [Get]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Put);
+    fixture = TestBed.createComponent(Get);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
