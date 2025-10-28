@@ -1,0 +1,49 @@
+<main class="w-screen flex flex-col justify-center items-center">
+  <h1 class="text-[35px] pt-4 font-semibold">POST API</h1>
+  <p class="text-[18px] text-gray-600">Add New Items</p>
+  <div class="flex flex-col gap-4 mt-6">
+    <input
+      type="text"
+      [(ngModel)]="mendata.brand_name"
+      placeholder="Brand Name"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <input
+      required
+      type="text"
+      [(ngModel)]="mendata.details"
+      placeholder="(i) Details"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <input
+      type="text"
+      [(ngModel)]="mendata.old_rs"
+      placeholder="₹ Old Rs"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <input
+      type="text"
+      [(ngModel)]="mendata.new_rs"
+      placeholder="₹ New Rs"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <input
+      type="text"
+      [(ngModel)]="mendata.offer"
+      placeholder="% Offer"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <input
+      type="text"
+      [(ngModel)]="mendata.stars"
+      placeholder="★ No of Stars"
+      class="w-[380px] border border-gray-500 rounded-[9px] px-3 py-3 text-[18px] placeholder:text-gray-500"
+    />
+    <button
+      (click)="Add()"
+      class="w-[380px] bg-gray-800 text-white rounded-[9px] px-3 py-3 text-[20px]"
+    >
+      Add
+    </button>
+  </div>
+</main>
