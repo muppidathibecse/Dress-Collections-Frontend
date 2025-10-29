@@ -6,11 +6,12 @@ import { Heart } from '../icons/heart/heart';
 import { HeartRed } from '../icons/heart-red/heart-red';
 import { HttpClient } from '@angular/common/http';
 import { MenData } from '../interfaces/mendata';
+import { Card } from '../card/card';
 
 @Component({
   selector: 'app-men',
   standalone: true,
-  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed],
+  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, Card],
   templateUrl: './men.html',
   styleUrl: './men.css',
 })

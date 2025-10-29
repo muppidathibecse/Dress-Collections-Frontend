@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenData } from '../interfaces/mendata';
 import { Heart } from '../icons/heart/heart';
 import { StarComponent } from '../icons/star/star';
@@ -11,5 +11,5 @@ import { HeartRed } from '../icons/heart-red/heart-red';
   styleUrl: './card.css',
 })
 export class Card {
-  men!: MenData;
+  @Input() menData!: MenData; // receives the data
 }
