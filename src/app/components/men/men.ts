@@ -16,7 +16,7 @@ import { MenData } from '../interfaces/mendata';
 })
 export class Men {
   constructor(public cdr: ChangeDetectorRef) {}
-  
+
   http = inject(HttpClient);
   AllData: MenData[] = [];
   ngOnInit(): void {
@@ -47,6 +47,30 @@ export class Men {
       console.log('Toggled successfully', res);
       this.GetAllItems();
       this.cdr.detectChanges();
+    });
+  }
+  AddToBag(men: MenData) {
+    const BagData = {
+      img_src: men.img_src,
+      isLike: men.isLike,
+      brand_name: men.brand_name,
+      details: men.details,
+      old_rs: men.old_rs,
+      new_rs: men.new_rs,
+      offer: men.offer,
+      stars: men.stars,
+      size: 'L',
+      qty: 1,
+      delivery: '10 Nov',
+    };
+    console.log(BagData);
+    this.http.post(`http://localhost:3000/bags`, BagData).subscribe({
+      next: (res) => {
+        alert('Success');
+      },
+      error: (error) => {
+        alert('Error' + error);
+      },
     });
   }
 }
