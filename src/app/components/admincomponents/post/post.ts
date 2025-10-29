@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class Post {
   http = inject(HttpClient);
   mendata: MenData = {
-    id: '',
+    _id: '',
     img_src: 'assets/kids/K5.webp',
     isLike: false,
     brand_name: '',
@@ -33,7 +33,7 @@ export class Post {
       },
     });
     this.mendata = {
-      id: '',
+      _id: '',
       img_src: 'assets/mens/M1.avif',
       isLike: false,
       brand_name: '',
@@ -55,7 +55,7 @@ export class Post {
       },
     });
     this.mendata = {
-      id: '',
+      _id: '',
       img_src: 'assets/mens/M1.avif',
       isLike: false,
       brand_name: '',
@@ -77,7 +77,7 @@ export class Post {
       },
     });
     this.mendata = {
-      id: '',
+      _id: '',
       img_src: 'assets/kids/K5.webp',
       isLike: false,
       brand_name: '',

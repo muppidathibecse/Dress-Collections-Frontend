@@ -25,7 +25,7 @@ export class Kids {
     this.http.get('http://localhost:3000/kids').subscribe((res: any) => {
       console.log(res);
       this.AllData = res.map((data: any) => ({
-        id: data._id,
+        _id: data._id,
         img_src: data.img_src,
         isLike: data.isLike,
         brand_name: data.brand_name,

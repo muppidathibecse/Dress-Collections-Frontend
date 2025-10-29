@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
-      class="size-9 text-gray-800"
+      class="size-11 text-gray-800"
     >
       <path
         fill-rule="evenodd"

@@ -16,6 +16,7 @@ import { MenData } from '../interfaces/mendata';
 })
 export class Men {
   constructor(public cdr: ChangeDetectorRef) {}
+  
   http = inject(HttpClient);
   AllData: MenData[] = [];
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class Men {
     this.http.get('http://localhost:3000/men').subscribe((res: any) => {
       console.log(res);
       this.AllData = res.map((data: any) => ({
-        id: data._id,
+        _id: data._id,
         img_src: data.img_src,
         isLike: data.isLike,
         brand_name: data.brand_name,

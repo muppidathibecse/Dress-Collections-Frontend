@@ -1,5 +1,5 @@
 export interface MenData {
-  id: string;
+  _id: string;
   img_src: string;
   isLike: boolean;
   brand_name: string;
