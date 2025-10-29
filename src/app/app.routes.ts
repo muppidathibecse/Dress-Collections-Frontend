@@ -11,6 +11,7 @@ import { Profile } from './components/profile/profile';
 import { Adminapi } from './components/admincomponents/adminapi/adminapi';
 import { Post } from './components/admincomponents/post/post';
 import { Get } from './components/admincomponents/get/get';
+import { Card } from './components/card/card';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -35,6 +36,10 @@ export const routes: Routes = [
     component: Women,
   },
   {
+    path: 'card',
+    component: Card,
+  },
+  {
     path: 'kids',
     component: Kids,
   },
@@ -54,7 +59,7 @@ export const routes: Routes = [
     path: 'adminapi',
     component: Adminapi,
   },
-   {
+  {
     path: 'adminapi/get',
     component: Get,
   },

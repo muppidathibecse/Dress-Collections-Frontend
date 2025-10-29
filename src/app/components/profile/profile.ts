@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { Navbar } from '../navbar/navbar';
-import { RightArrow } from '../icons/right-arrow/right-arrow';
+import { Profiles } from '../profiles/profiles';
+import { Orders } from '../orders/orders';
+import { Categories } from '../categories/categories';
+import { Dp } from '../../dp/dp';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [Navbar, RightArrow],
+  imports: [Profiles, Orders, Categories, Dp],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
