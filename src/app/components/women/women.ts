@@ -6,10 +6,11 @@ import { Heart } from '../icons/heart/heart';
 import { HeartRed } from '../icons/heart-red/heart-red';
 import { HttpClient } from '@angular/common/http';
 import { MenData } from '../interfaces/mendata';
+import { BagSmallOutline } from '../icons/bag-small-outline/bag-small-outline';
 
 @Component({
   selector: 'app-women',
-  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed],
+  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, BagSmallOutline],
   templateUrl: './women.html',
   styleUrl: './women.css',
 })

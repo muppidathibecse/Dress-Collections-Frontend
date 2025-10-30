@@ -1,119 +1,86 @@
-<main>
-  <div class="flex h-[50px] items-center mt-3 gap-2 justify-center">
-    <img src="./assets/logos/Logo.jpg" alt="" class="h-20 w-20" />
-    <input
-      type="text"
-      placeholder="Search Products"
-      class="border border-[#b4b4b4] px-4 h-[50px] w-[500px] text-[17px] rounded-[10px] placeholder:text-[#848484]"
-    />
-
-    <div
+<div
+  class="sm:flex sm:flex-row flex flex-row justify-between py-4 sm:justify-center items-center px-10 gap-5 border-b border-b-[#b4b4b4]"
+  [ngClass]="{ 'mb-90': isMenuOpen }"
+>
+  <div
+    [ngClass]="{ hidden: !isMenuOpen, flex: isMenuOpen }"
+    class="flex-col sm:flex sm:flex-row gap-6 justify-start items-start sm:pl-0 sm:gap-10 sm:static absolute sm:top-auto top-16 left-0 w-full sm:bg-transparent sm:w-auto z-10"
+  >
+    <a
       routerLink="/home"
       routerLinkActive="active-link"
-      class="h-full w-30 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
+      >All</a
     >
-      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
-        <a
-          routerLink="/home"
-          class="cursor-pointer"
-          #homeRla="routerLinkActive"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <app-home-black *ngIf="homeRla.isActive; else homeOutline"></app-home-black>
-          <ng-template #homeOutline>
-            <app-home-outline></app-home-outline>
-          </ng-template>
-        </a>
 
-        <p class="ml-4 text-[20px] text-[#979797]">All</p>
-      </div>
-      <hr class="hr-underline border-t-4 border-white rounded-full w-[55%] mt-1" />
-    </div>
-
-    <div
+    <a
       routerLink="/men"
       routerLinkActive="active-link"
-      class="h-full w-35 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
+      >Men</a
     >
-      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
-        <img src="assets/logos/Men.jpg" class="w-11 h-11 rounded-full" />
-        <p class="ml-4 text-[20px] text-[#979797]">Men</p>
-      </div>
-      <hr class="hr-underline border-t-4 border-white rounded-full w-[55%] mt-1" />
-    </div>
-
-    <div
+    <a
       routerLink="/women"
       routerLinkActive="active-link"
-      class="h-full w-40 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
+      >Women</a
     >
-      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
-        <img src="assets/logos/Women.jpg" class="w-11 h-11 rounded-full" />
-        <p class="ml-4 text-[20px] text-[#979797]">Women</p>
-      </div>
-      <hr class="hr-underline border-t-4 border-black rounded-full w-[70%] mt-1" />
-    </div>
-
-    <div
+    <a
       routerLink="/kids"
       routerLinkActive="active-link"
-      class="h-full w-35 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
+      >Kids</a
     >
-      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
-        <img src="assets/logos/Kids.jpg" class="w-11 h-11 rounded-full" />
-        <p class="ml-4 text-[20px] text-[#979797]">Kids</p>
-      </div>
-      <hr class="hr-underline border-t-4 border-black rounded-full w-[55%] mt-1" />
-    </div>
-
-    <div class="h-full w-50 flex justify-between items-center px-2">
-      <a
-        routerLink="/likes"
-        class="cursor-pointer"
-        #likesRla="routerLinkActive"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <app-heart-black *ngIf="likesRla.isActive; else heartOutline"></app-heart-black>
-        <ng-template #heartOutline>
-          <app-heart-outline></app-heart-outline>
-        </ng-template>
-      </a>
-
-      <div class="relative">
-        <p
-          class="bg-red-600 text-white w-5 h-5 p-2 text-[15px] flex justify-center items-center rounded-full absolute left-6"
-        >
-          1
-        </p>
-        <a
-          routerLink="/bags"
-          class="cursor-pointer"
-          #bagsRla="routerLinkActive"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <app-bag-black *ngIf="bagsRla.isActive; else bagOutline"></app-bag-black>
-          <ng-template #bagOutline>
-            <app-bag-outline></app-bag-outline>
-          </ng-template>
-        </a>
-      </div>
-
-      <a
-        routerLink="/profile"
-        class="cursor-pointer"
-        #profileRla="routerLinkActive"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <app-profile-black *ngIf="profileRla.isActive; else profileOutline"></app-profile-black>
-        <ng-template #profileOutline>
-          <app-profile-outline></app-profile-outline>
-        </ng-template>
-      </a>
-    </div>
   </div>
-  <hr class="border-t border-[#adadad] rounded-full w-full mt-7" />
-</main>
+
+  <div class="flex gap-4 flex-row-reverse sm:flex-row">
+    <a
+      routerLink="/likes"
+      class="cursor-pointer"
+      #likesRla="routerLinkActive"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-heart-black *ngIf="likesRla.isActive; else heartOutline"></app-heart-black>
+      <ng-template #heartOutline>
+        <app-heart-outline></app-heart-outline>
+      </ng-template>
+    </a>
+
+    <div class="relative">
+      <p
+        class="bg-red-600 text-white w-5 h-5 p-2 text-[15px] flex justify-center items-center rounded-full absolute left-6"
+      >
+        1
+      </p>
+      <a
+        routerLink="/bags"
+        class="cursor-pointer"
+        #bagsRla="routerLinkActive"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <app-bag-black *ngIf="bagsRla.isActive; else bagOutline"></app-bag-black>
+        <ng-template #bagOutline>
+          <app-bag-outline></app-bag-outline>
+        </ng-template>
+      </a>
+    </div>
+
+    <a
+      routerLink="/profile"
+      class="cursor-pointer"
+      #profileRla="routerLinkActive"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-profile-black *ngIf="profileRla.isActive; else profileOutline"></app-profile-black>
+      <ng-template #profileOutline>
+        <app-profile-outline></app-profile-outline>
+      </ng-template>
+    </a>
+  </div>
+  <button class="sm:hidden text-black text-[28px] font-bold cursor-pointer" (click)="toggleMenu()">
+    ☰
+  </button>
+</div>

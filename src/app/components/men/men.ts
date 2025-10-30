@@ -3,6 +3,7 @@ import { Navbar } from '../navbar/navbar';
 import { CommonModule } from '@angular/common';
 import { StarComponent } from '../icons/star/star';
 import { Heart } from '../icons/heart/heart';
+import { BagSmallOutline } from '../icons/bag-small-outline/bag-small-outline';
 import { HeartRed } from '../icons/heart-red/heart-red';
 import { HttpClient } from '@angular/common/http';
 import { MenData } from '../interfaces/mendata';
@@ -11,7 +12,7 @@ import { Card } from '../card/card';
 @Component({
   selector: 'app-men',
   standalone: true,
-  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, Card],
+  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, Card, BagSmallOutline],
   templateUrl: './men.html',
   styleUrl: './men.css',
 })

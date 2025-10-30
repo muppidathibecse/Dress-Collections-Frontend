@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-bag-outline',
+  selector: 'app-bag-small-outline',
   imports: [],
   template: `
-    <svg
+<svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-9"
+      class="size-5"
     >
       <path
         stroke-linecap="round"
@@ -19,8 +19,8 @@ import { Component } from '@angular/core';
       />
     </svg>
   `,
-  styles: ``,
+  styles: ``
 })
-export class BagOutline {
-  
+export class BagSmallOutline {
+
 }

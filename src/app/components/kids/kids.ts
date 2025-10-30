@@ -6,10 +6,11 @@ import { StarComponent } from '../icons/star/star';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MenData } from '../interfaces/mendata';
+import { BagSmallOutline } from '../icons/bag-small-outline/bag-small-outline';
 
 @Component({
   selector: 'app-kids',
-  imports: [Navbar, Heart, HeartRed, StarComponent, CommonModule],
+  imports: [Navbar, Heart, HeartRed, StarComponent, CommonModule, BagSmallOutline],
   templateUrl: './kids.html',
   styleUrl: './kids.css',
 })
