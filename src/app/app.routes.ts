@@ -12,6 +12,7 @@ import { Adminapi } from './components/admincomponents/adminapi/adminapi';
 import { Post } from './components/admincomponents/post/post';
 import { Get } from './components/admincomponents/get/get';
 import { Card } from './components/card/card';
+import { Payment } from './components/payment/payment';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -66,5 +67,9 @@ export const routes: Routes = [
   {
     path: 'adminapi/post',
     component: Post,
+  },
+  {
+    path: 'payment',
+    component: Payment,
   },
 ];

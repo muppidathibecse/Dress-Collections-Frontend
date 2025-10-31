@@ -1,36 +1,64 @@
 <div
   class="sm:flex sm:flex-row flex flex-row justify-between py-4 sm:justify-center items-center px-10 gap-5 border-b border-b-[#b4b4b4]"
-  [ngClass]="{ 'mb-90': isMenuOpen }"
+  [ngClass]="{ 'mb-70': isMenuOpen }"
 >
   <div
     [ngClass]="{ hidden: !isMenuOpen, flex: isMenuOpen }"
-    class="flex-col sm:flex sm:flex-row gap-6 justify-start items-start sm:pl-0 sm:gap-10 sm:static absolute sm:top-auto top-16 left-0 w-full sm:bg-transparent sm:w-auto z-10"
+    class="flex-col sm:flex sm:flex-row gap-6 justify-start items-start sm:pl-0 sm:gap-10 sm:static absolute sm:top-auto top-20 left-0 w-full sm:bg-transparent sm:w-auto z-10"
   >
-    <a
-      routerLink="/home"
-      routerLinkActive="active-link"
-      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
-      >All</a
-    >
+    <div class="sm:flex flex-col justify-center items-center">
+      <a
+        routerLink="/home"
+        routerLinkActive="active-link"
+        class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer w-full text-[#a8a2a2] relative flex flex-col items-center"
+      >
+        All
+        <hr
+          [ngClass]="{ hidden: isMenuOpen }"
+          class="hr-underline border-t-2 w-[30px] rounded-full border-gray-800 mt-1"
+        />
+      </a>
+    </div>
+    <div class="sm:flex flex-col justify-center items-center">
+      <a
+        routerLink="/men"
+        routerLinkActive="active-link"
+        class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer w-full text-[#a8a2a2] relative flex flex-col items-center"
+      >
+        Men
+        <hr
+          [ngClass]="{ hidden: isMenuOpen }"
+          class="hr-underline border-t-2 w-[30px] rounded-full border-gray-800 mt-1"
+        />
+      </a>
+    </div>
 
-    <a
-      routerLink="/men"
-      routerLinkActive="active-link"
-      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
-      >Men</a
-    >
-    <a
-      routerLink="/women"
-      routerLinkActive="active-link"
-      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
-      >Women</a
-    >
-    <a
-      routerLink="/kids"
-      routerLinkActive="active-link"
-      class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer hover:bg-[#acacac] w-full"
-      >Kids</a
-    >
+    <div class="sm:flex flex-col justify-center items-center">
+      <a
+        routerLink="/women"
+        routerLinkActive="active-link"
+        class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer w-full text-[#a8a2a2] relative flex flex-col items-center"
+      >
+        Women
+        <hr
+          [ngClass]="{ hidden: isMenuOpen }"
+          class="hr-underline border-t-2 w-[30px] rounded-full border-gray-800 mt-1"
+        />
+      </a>
+    </div>
+    <div class="sm:flex flex-col justify-center items-center">
+      <a
+        routerLink="/kids"
+        routerLinkActive="active-link"
+        class="text-[20px] pl-10 rounded-[9px] py-3 sm:py-0 sm:pl-0 cursor-pointer w-full text-[#a8a2a2] relative flex flex-col items-center"
+      >
+        Kids
+        <hr
+          [ngClass]="{ hidden: isMenuOpen }"
+          class="hr-underline border-t-2 w-[30px] rounded-full border-gray-800 mt-1"
+        />
+      </a>
+    </div>
   </div>
 
   <div class="flex gap-4 flex-row-reverse sm:flex-row">
@@ -51,7 +79,7 @@
       <p
         class="bg-red-600 text-white w-5 h-5 p-2 text-[15px] flex justify-center items-center rounded-full absolute left-6"
       >
-        1
+        6
       </p>
       <a
         routerLink="/bags"
