@@ -12,7 +12,7 @@ import { Card } from '../card/card';
 @Component({
   selector: 'app-men',
   standalone: true,
-  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, Card, BagSmallOutline],
+  imports: [Navbar, StarComponent, CommonModule, Heart, HeartRed, BagSmallOutline],
   templateUrl: './men.html',
   styleUrl: './men.css',
 })

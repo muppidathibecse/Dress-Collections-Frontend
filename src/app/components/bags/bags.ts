@@ -1,25 +1,22 @@
 import { ChangeDetectorRef, Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { DownArrow } from '../icons/down-arrow/down-arrow';
-import { Heart } from '../icons/heart/heart';
-import { HeartRed } from '../icons/heart-red/heart-red';
 import { Truck } from '../icons/truck/truck';
 import { Remove } from '../icons/remove/remove';
 import { CommonModule } from '@angular/common';
-import { StringifyOptions } from 'querystring';
-import { MenData } from '../interfaces/mendata';
 import { HttpClient } from '@angular/common/http';
 import { BagData } from './bagdata';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bags',
   standalone: true,
-  imports: [CommonModule, Navbar, DownArrow, Truck, Remove, Heart, HeartRed],
+  imports: [CommonModule, Navbar, DownArrow, Truck, Remove],
   templateUrl: './bags.html',
   styleUrl: './bags.css',
 })
 export class Bags {
-  constructor(public cdr: ChangeDetectorRef) {}
+  constructor(public cdr: ChangeDetectorRef, public router: Router) {}
 
   @ViewChild('orderDetails') orderDetails!: ElementRef;
 
@@ -122,5 +119,8 @@ export class Bags {
       this.GetAllItems();
       this.cdr.detectChanges();
     });
+  }
+  MovePay() {
+    this.router.navigate(['/payment']);
   }
 }

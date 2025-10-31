@@ -1,0 +1,45 @@
+<main>
+  <div
+    class="flex flex-col justify-center items-center shadow-lg p-4 bg-white border-b border-b-[#d0d0d0]"
+  >
+    <div class="w-full flex justify-between items-center cursor-pointer" (click)="toggleVOptions()">
+      <p class="text-lg font-semibold text-[#242323]">View Details</p>
+      <i class="fa-solid" [ngClass]="isVOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    </div>
+
+    <div *ngIf="isVOpen" class="w-full flex flex-col gap-5 mt-4 transition-all duration-700">
+      <table class="text-[14px]">
+        <tbody>
+          <tr class="text-end">
+            <td class="text-start py-1">Bag Total</td>
+            <td class="text-end">₹123455</td>
+          </tr>
+          <tr class="text-end">
+            <td class="text-start py-1">Bag Savings</td>
+            <td class="text-end text-[#0c8f40]">-₹1234.00</td>
+          </tr>
+          <tr class="text-end">
+            <td class="text-start py-1">Platform Fee</td>
+            <td class="text-end">₹69.00</td>
+          </tr>
+          <tr class="text-end">
+            <td class="text-start py-1">Delivery Fee</td>
+            <td class="text-end">
+              <p class="text-[#0c8f40]">
+                Free <span class="pl-2 line-through text-gray-600">₹99.00</span>
+              </p>
+            </td>
+          </tr>
+          <tr class="text-end">
+            <td class="text-start py-1">Coupon Savings</td>
+            <td class="text-end text-[#1712b8]">Apply Coupon</td>
+          </tr>
+          <tr class="text-end">
+            <td class="text-start py-1 text-[20px] font-semibold">Total Amount</td>
+            <td class="text-end text-[20px] font-semibold">₹6956.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

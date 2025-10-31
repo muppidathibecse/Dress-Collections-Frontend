@@ -9,7 +9,7 @@ import { HomeExplores } from '../home-explores/home-explores';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Navbar, CommonModule, HomeStarter, HomeBrands, HomeOffers, HomeExplores],
+  imports: [Navbar, CommonModule, HomeStarter, HomeBrands, HomeOffers],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
