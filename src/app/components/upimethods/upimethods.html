@@ -9,96 +9,52 @@
 
     <div *ngIf="isOpen" class="w-full flex flex-col gap-5 mt-4 transition-all duration-700">
       <div
-        class="text-white p-2 rounded-lg border border-gray-400 flex justify-between items-center"
+        *ngFor="let method of paymentMethods"
+        class="p-2 rounded-lg border border-gray-400 flex justify-between items-center"
       >
         <div class="flex items-center">
-          <img src="assets/logos/G.png" class="h-10 w-10 rounded-full" alt="" />
-          <p class="text-black text-[15px] ml-10">Gpay</p>
+          <img [src]="method.img" class="h-10 w-10 rounded-full" alt="" />
+          <p class="text-black text-[15px] ml-10">{{ method.name }}</p>
         </div>
 
         <div class="flex items-center">
           <input
             type="radio"
             name="paymentMethod"
-            value="gpay"
+            [value]="method.value"
             [(ngModel)]="selectedPayment"
             class="size-5 mr-5 cursor-pointer accent-gray-800"
           />
-
-          <!-- Show only if selected -->
-        </div>
-      </div>
-
-      <div class="p-2 rounded-lg border border-gray-400 flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="assets/logos/P.png" class="h-10 w-10 rounded-full" alt="" />
-          <p class="text-black text-[15px] ml-10">PhonePe</p>
-        </div>
-
-        <div class="flex items-center">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="phonepe"
-            [(ngModel)]="selectedPayment"
-            class="size-5 mr-5 cursor-pointer accent-gray-800"
-          />
-
-          <!-- Show only if selected -->
-        </div>
-      </div>
-      <div class="p-2 rounded-lg border border-gray-400 flex justify-between items-center">
-        <div class="flex items-center">
-          <img src="assets/logos/PT.png" class="h-10 w-10 rounded-full" alt="" />
-          <p class="text-black text-[15px] ml-10">PhonePe</p>
-        </div>
-
-        <div class="flex items-center">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="paytm"
-            [(ngModel)]="selectedPayment"
-            class="size-5 mr-5 cursor-pointer accent-gray-800"
-          />
-
-          <!-- Show only if selected -->
-        </div>
-      </div>
-      <div
-        class="text-white p-2 rounded-lg border border-gray-400 flex justify-between items-center"
-      >
-        <div class="flex items-center">
-          <img src="assets/logos/C.png" class="h-10 w-10 rounded-full" alt="" />
-          <p class="text-black text-[15px] ml-10">Cash on Delivery</p>
-        </div>
-
-        <div class="flex items-center">
-          <input
-            type="radio"
-            name="paymentMethod"
-            value="cash"
-            [(ngModel)]="selectedPayment"
-            class="size-5 mr-5 cursor-pointer accent-gray-800"
-          />
-
-          <!-- Show only if selected -->
         </div>
       </div>
     </div>
   </div>
-  <button
-    *ngIf="
-      selectedPayment === 'gpay' || selectedPayment === 'phonepe' || selectedPayment === 'paytm'
-    "
-    class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
+
+  <div class="flex justify-center items-center py-3 mt-5">
+    <button
+    (click)="confirmOrder()"
+      *ngIf="
+        selectedPayment === 'gpay' || selectedPayment === 'phonepe' || selectedPayment === 'paytm'
+      "
+      class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
+    >
+      Confirm to Pay ₹6789.00
+    </button>
+    <button
+    (click)="confirmOrder()"
+      *ngIf="selectedPayment === 'cash'"
+      class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
+    >
+      Confirm Order
+    </button>
+  </div>
+
+  <!-- Success Animation -->
+  <div
+    *ngIf="showSuccess"
+    class="fixed inset-0 bg-[rgba(0,0,0,0.78)] z-50 px-4 py-3 flex items-center justify-center text-white sm:px-6 sm:py-4 shadow-lg animate-fadeIn"
   >
-    Confirm to Pay ₹6789.00
-  </button>
-  <button
-    *ngIf="selectedPayment === 'cash'"
-    class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
-  >
-    Confirm Order
-  </button>
+    
+    <p class="font-semibold text-[25px] bg-green-600 text-white px-3 py-3 rounded-[11px]"><i class="fa-solid fa-check mr-2 animate-bounce text-[24px]"></i> Order Confirmed!</p>
+  </div>
 </main>

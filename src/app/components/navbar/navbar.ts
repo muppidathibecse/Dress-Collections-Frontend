@@ -27,7 +27,7 @@ import { ProfileOutline } from '../icons/profile-outline/profile-outline';
 export class Navbar {
   isMenuOpen = false;
 
-  toggleMenu() {
+  toggleMenu() {     
     this.isMenuOpen = !this.isMenuOpen;
   }
-}
+}                               
