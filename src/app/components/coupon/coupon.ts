@@ -19,7 +19,7 @@ export class Coupon {
     },
     {
       img: 'assets/logos/HDFC.png',
-      details: 'Get 15% Offer. Instant Discout of up to Rs.1000. Using HDFC Primeee Cards.',
+      details: 'Get 15% Offer. Instant Discouts of up to Rs.1000. Using HDFC Primeee Cards.',
     },
   ];
   isCOpen = false;
