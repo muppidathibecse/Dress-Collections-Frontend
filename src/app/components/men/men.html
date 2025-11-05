@@ -1,27 +1,44 @@
 <main>
-  <app-navbar></app-navbar>
-  <div class="h-full w-full flex flex-wrap gap-15 justify-start items-center">
-    <div>
-      <div class="h-55 w-45 bg-amber-700 rounded-[10px]"></div>
-      <div class="flex">
-        <h1>NETPLAY</h1>
-        <div class="flex border rounded-[17px] justify-center items-center p-1">
-          <img src="assets/icons/heartfill.svg" class="w-5 h-5 rounded-full" />
-          <p>1.2M</p>
+  <app-navbar class="fixed top-0 left-0 z-50 w-full bg-white shadow-md"></app-navbar>
+  <div class="mx-auto w-full mt-30">
+    <div class="h-full w-full flex flex-wrap justify-center items-center gap-20 my-10">
+      <div
+        *ngFor="let men of AllData; let i = index"
+        class="relative flex flex-col border-2 border-[#d3d3d3] p-2 rounded-[10px] w-54 min-h-60 cursor-pointer hover:border-black hover:border-2"
+      >
+        <div
+          (click)="ChangeLike(men._id)"
+          class="h-8 w-8 rounded-full bg-white absolute top-52 right-4 flex justify-center items-center cursor-pointer"
+        >
+          <app-heart *ngIf="men.isLike == false"></app-heart>
+          <app-heart-red *ngIf="men.isLike == true"></app-heart-red>
         </div>
-      </div>
-      <p>Men Regular Fit SHirt</p>
-      <div class="flex gap-4">
-        <p>₹1888</p>
-        <p class="line-through">₹2999</p>
-        <p class="text-green-600">45% OFF</p>
-      </div>
-      <div class="flex">
-        <img src="assets/icons/starfill.svg" class="w-5 h-5 rounded-full" />
-        <img src="assets/icons/starfill.svg" class="w-5 h-5 rounded-full" />
-        <img src="assets/icons/starfill.svg" class="w-5 h-5 rounded-full" />
-        <img src="assets/icons/star.svg" class="w-5 h-5 rounded-full" />
-        <img src="assets/icons/star.svg" class="w-5 h-5 rounded-full" />
+
+        <img [src]="men.img_src" class="h-59 w-full rounded-[10px]" />
+        <div class="h-34 flex flex-col gap-1 justify-between">
+          <h1 class="text-[20px] font-semibold mt-2 text-wrap">{{ men.brand_name }}</h1>
+          <p class="text-gray-500">{{ men.details }}</p>
+          <div class="flex gap-3">
+            <p class="font-semibold">₹{{ men.new_rs }}</p>
+            <p class="line-through text-gray-400">₹{{ men.old_rs }}</p>
+            <p class="text-[#00976c] font-semibold">{{ men.offer }}% OFF</p>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="flex gap-1">
+              <app-star *ngFor="let star of [].constructor(+men.stars)"></app-star>
+
+              <img
+                *ngFor="let star of [].constructor(5 - +men.stars); let i = index"
+                src="assets/icons/star.svg"
+                class="w-5 h-5 rounded-full"
+              />
+            </div>
+            <app-bag-small-outline
+              (click)="AddToBag(men)"
+              class="border p-1 hover:bg-black hover:text-white rounded-full"
+            ></app-bag-small-outline>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,60 @@
+<main>
+  <div
+    class="flex flex-col justify-center items-center shadow-lg p-4 bg-white border-b border-b-[#d0d0d0]"
+  >
+    <div class="w-full flex justify-between items-center cursor-pointer" (click)="toggleOptions()">
+      <p class="text-lg font-semibold text-[#242323]">Payment Confirmation</p>
+      <i class="fa-solid" [ngClass]="isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    </div>
+
+    <div *ngIf="isOpen" class="w-full flex flex-col gap-5 mt-4 transition-all duration-700">
+      <div
+        *ngFor="let method of paymentMethods"
+        class="p-2 rounded-lg border border-gray-400 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img [src]="method.img" class="h-10 w-10 rounded-full" alt="" />
+          <p class="text-black text-[15px] ml-10">{{ method.name }}</p>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="radio"
+            name="paymentMethod"
+            [value]="method.value"
+            [(ngModel)]="selectedPayment"
+            class="size-5 mr-5 cursor-pointer accent-gray-800"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center py-3 mt-5">
+    <button
+    (click)="confirmOrder()"
+      *ngIf="
+        selectedPayment === 'gpay' || selectedPayment === 'phonepe' || selectedPayment === 'paytm'
+      "
+      class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
+    >
+      Confirm to Pay ₹{{bagTotal}}.00
+    </button>
+    <button
+    (click)="confirmOrder()"
+      *ngIf="selectedPayment === 'cash'"
+      class="bg-black text-white px-4 py-3 rounded-[10px] text-[15px] sm:text-[17px] cursor-pointer w-[250px] sm:w-[400px]"
+    >
+      Confirm Order
+    </button>
+  </div>
+
+  <!-- Success Animation -->
+  <div
+    *ngIf="showSuccess"
+    class="fixed inset-0 bg-[rgba(0,0,0,0.78)] z-50 px-4 py-3 flex items-center justify-center text-white sm:px-6 sm:py-4 shadow-lg animate-fadeIn"
+  >
+    
+    <p class="font-semibold text-[25px] bg-green-600 text-white px-3 py-3 rounded-[11px]"><i class="fa-solid fa-check mr-2 animate-bounce text-[24px]"></i> Order Confirmed!</p>
+  </div>
+</main>

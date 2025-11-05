@@ -1,4 +1,44 @@
 <main>
-  <app-navbar></app-navbar>
-  <h1>Womens Works</h1>
+  <app-navbar class="fixed top-0 left-0 z-50 w-full bg-white shadow-md"></app-navbar>
+  <div class="h-full w-full flex flex-wrap justify-center items-center gap-20 my-10 mt-30">
+    <div
+      *ngFor="let women of AllData; let i = index"
+ 
+      class="relative flex flex-col border-2 border-[#d3d3d3] p-2 rounded-[10px] w-54 cursor-pointer hover:border-black hover:border-2"
+    >
+      <div
+        (click)="ChangeLike(women._id)"
+        class="h-8 w-8 rounded-full bg-white absolute top-52 right-4 flex justify-center items-center cursor-pointer"
+      >
+        <app-heart *ngIf="women.isLike == false"></app-heart>
+        <app-heart-red *ngIf="women.isLike == true"></app-heart-red>
+      </div>
+
+      <img [src]="women.img_src" class="h-59 w-full rounded-[10px]" />
+      <div class="h-34 flex flex-col gap-1 justify-between">
+        <h1 class="text-[20px] font-semibold mt-2">{{ women.brand_name }}</h1>
+        <p class="text-gray-500">{{ women.details }}</p>
+        <div class="flex gap-3">
+          <p class="font-semibold">₹{{ women.new_rs }}</p>
+          <p class="line-through text-gray-400">₹{{ women.old_rs }}</p>
+          <p class="text-[#00976c] font-semibold">{{ women.offer }}% OFF</p>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="flex gap-1">
+            <app-star *ngFor="let star of [].constructor(+women.stars)"></app-star>
+
+            <img
+              *ngFor="let star of [].constructor(5 - +women.stars); let i = index"
+              src="assets/icons/star.svg"
+              class="w-5 h-5 rounded-full"
+            />
+          </div>
+          <app-bag-small-outline
+            (click)="AddToBag(women)"
+            class="border p-1 hover:bg-black hover:text-white rounded-full"
+          ></app-bag-small-outline>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

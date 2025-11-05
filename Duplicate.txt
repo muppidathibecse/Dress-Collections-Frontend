@@ -1,0 +1,85 @@
+
+<!--  -->
+
+
+
+
+  <main>
+  <div class="flex h-[50px] items-center mt-3 gap-2 justify-center">
+    <img src="./assets/logos/Logo.jpg" alt="" class="h-20 w-20" />
+    <input
+      type="text"
+      placeholder="Search Products"
+      class="border border-[#b4b4b4] px-4 h-[50px] w-[500px] text-[17px] rounded-[10px] placeholder:text-[#848484]"
+    />
+
+    <div
+      routerLink="/home"
+      routerLinkActive="active-link"
+      class="h-full w-30 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+    >
+      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
+        <a
+          routerLink="/home"
+          class="cursor-pointer"
+          #homeRla="routerLinkActive"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <app-home-black *ngIf="homeRla.isActive; else homeOutline"></app-home-black>
+          <ng-template #homeOutline>
+            <app-home-outline></app-home-outline>
+          </ng-template>
+        </a>
+
+        <p class="ml-4 text-[20px] text-[#979797]">All</p>
+      </div>
+      <hr class="hr-underline border-t-4 border-white rounded-full w-[55%] mt-1" />
+    </div>
+
+    <div
+      routerLink="/men"
+      routerLinkActive="active-link"
+      class="h-full w-35 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+    >
+      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
+        <img src="assets/logos/Men.jpg" class="w-11 h-11 rounded-full" />
+        <p class="ml-4 text-[20px] text-[#979797]">Men</p>
+      </div>
+      <hr class="hr-underline border-t-4 border-white rounded-full w-[55%] mt-1" />
+    </div>
+
+    <div
+      routerLink="/women"
+      routerLinkActive="active-link"
+      class="h-full w-40 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+    >
+      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
+        <img src="assets/logos/Women.jpg" class="w-11 h-11 rounded-full" />
+        <p class="ml-4 text-[20px] text-[#979797]">Women</p>
+      </div>
+      <hr class="hr-underline border-t-4 border-black rounded-full w-[70%] mt-1" />
+    </div>
+
+    <div
+      routerLink="/kids"
+      routerLinkActive="active-link"
+      class="h-full w-35 flex flex-col justify-between items-center rounded-[10px] gap-2 cursor-pointer"
+    >
+      <div class="h-full w-full px-3 flex items-center justify-start rounded-[10px]">
+        <img src="assets/logos/Kids.jpg" class="w-11 h-11 rounded-full" />
+        <p class="ml-4 text-[20px] text-[#979797]">Kids</p>
+      </div>
+      <hr class="hr-underline border-t-4 border-black rounded-full w-[55%] mt-1" />
+    </div>
+
+    <div class="h-full w-50 flex justify-between items-center px-2">
+      
+
+      
+
+     
+    </div>
+  </div>
+  <hr class="border-t border-[#adadad] rounded-full w-full mt-7" />
+</main>
