@@ -11,7 +11,7 @@ export class Coupon {
   CouponDetails = [
     {
       img: 'assets/logos/SBI.jpg',
-      details: 'Get 15% Offer. Instant Discout of up to Rs.1000. Using SBI Prime Cards.',
+      details: 'Get 15% Offer. Instant Discoutss of up to Rs.1000. Using SBI Prime Cards.',
     },
     {
       img: 'assets/logos/UBI.png',
