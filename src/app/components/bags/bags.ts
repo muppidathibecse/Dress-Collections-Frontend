@@ -121,6 +121,8 @@ export class Bags {
     });
   }
   MovePay() {
-    this.router.navigate(['/payment']);
+    this.router.navigate(['/payment'], {
+      queryParams: { bagTotal: this.bagTotal, saveTotal: this.saveTotal },
+    });
   }
 }

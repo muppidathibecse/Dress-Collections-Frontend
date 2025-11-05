@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-viewdetails',
@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './viewdetails.css',
 })
 export class Viewdetails {
+  @Input() bagTotal: number = 0;
+  @Input() saveTotal: number = 0;
+
+  ngOnChanges() {
+    console.log('Viewdetails received - Bag Total:', this.bagTotal);
+    console.log('Viewdetails received - Save Total:', this.saveTotal);
+  }
   isVOpen = false;
 
   toggleVOptions() {

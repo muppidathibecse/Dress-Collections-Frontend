@@ -12,11 +12,11 @@
         <tbody>
           <tr class="text-end">
             <td class="text-start py-1">Bag Total</td>
-            <td class="text-end">₹123455</td>
+            <td class="text-end">₹{{ saveTotal }}</td>
           </tr>
           <tr class="text-end">
             <td class="text-start py-1">Bag Savings</td>
-            <td class="text-end text-[#0c8f40]">-₹1234.00</td>
+            <td class="text-end text-[#0c8f40]">-₹{{ saveTotal - bagTotal }}</td>
           </tr>
           <tr class="text-end">
             <td class="text-start py-1">Platform Fee</td>
@@ -36,7 +36,7 @@
           </tr>
           <tr class="text-end">
             <td class="text-start py-1 text-[20px] font-semibold">Total Amount</td>
-            <td class="text-end text-[20px] font-semibold">₹6956.00</td>
+            <td class="text-end text-[20px] font-semibold">₹{{ bagTotal }}.00</td>
           </tr>
         </tbody>
       </table>

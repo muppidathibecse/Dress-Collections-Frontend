@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrl: './upimethods.css',
 })
 export class Upimethods {
+  @Input() bagTotal: number = 0;
+
+  ngOnChanges() {
+    console.log('Viewdetails received - Bag Total:', this.bagTotal);
+  }
   constructor(public router: Router) {}
   paymentMethods = [
     { img: 'assets/logos/G.png', name: 'GPay', value: 'gpay' },
