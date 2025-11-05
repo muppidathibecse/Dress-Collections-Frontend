@@ -15,7 +15,7 @@ export class Coupon {
     },
     {
       img: 'assets/logos/UBI.png',
-      details: 'Get 15% Offer. Instant Discout of up to Rs.1000. Using UBI Prime Cards.',
+      details: 'Get 15% Offer. Instant Discout of up to Rs.1000. Using UBIIIII Prime Cards.',
     },
     {
       img: 'assets/logos/HDFC.png',
